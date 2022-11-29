@@ -1,15 +1,15 @@
 <nav class="flex flex-col w-[176px] bg-sidebar">
   <div class="flex flex-col my-[16px]">
-    <% [{ name: 'Dashboard', path: root_path, icon: 'dashboard', active: true },
-        { name: 'Messages', path: messages_path, icon: 'messages', active: false },
-        { name: 'Tasks', path: tasks_path, icon: 'tasks', active: false }].each do |link| %>
+    <% [{ name: 'Dashboard', path: root_path, icon: 'dashboard' },
+        { name: 'Messages', path: messages_path, icon: 'messages' },
+        { name: 'Tasks', path: tasks_path, icon: 'tasks' }].each do |link| %>
       <%= link_to(
         link[:path],
         src: link[:path],
         class: 'pl-[16px] flex align-middle h-[48px] my-auto text-white select-none hover:cursor-pointer hover:bg-bluegray'
       ) do %>
-        <%= image_tag("menu-#{link[:icon]}#{current_page?(link[:path]) ? '-active' : ''}.svg") %>
-        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if (current_page?(link[:path]))}")%>
+        <%= image_tag("menu-#{link[:icon]}#{current_path?(link[:name]) ? '-active' : ''}.svg") %>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if (current_path?(link[:name]))}")%>
       <% end %>
     <% end %>
   </div>

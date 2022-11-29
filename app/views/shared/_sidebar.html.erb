@@ -1,0 +1,20 @@
+<nav class="flex flex-col w-[176px] bg-sidebar">
+  <div class="flex flex-col my-[16px]">
+    <% [{ name: 'Dashboard', path: root_path, icon: 'dashboard', active: true },
+        { name: 'Messages', path: root_path, icon: 'messages', active: false },
+        { name: 'Tasks', path: root_path, icon: 'tasks', active: false }].each do |link| %>
+      <%= link_to(
+        link[:path],
+        src: link[:path],
+        class: 'pl-[16px] flex align-middle h-[48px] my-auto text-white select-none hover:cursor-pointer hover:bg-bluegray'
+      ) do %>
+        <%= image_tag("menu-#{link[:icon]}#{current_page?(link[:path]) ? '-active' : ''}.svg") %>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if (current_page?(link[:path]))}")%>
+      <% end %>
+    <% end %>
+  </div>
+  <%= content_tag(:div, '', class: 'h-[2px] w-full bg-lightgray')%>
+  <div class="px-[8px] mt-[48px]">
+    <%= content_tag(:p, '© Ivan Vasiliev, 2022', class: 'text-[12px] text-white opacity-40') %>
+  </div>
+</nav>

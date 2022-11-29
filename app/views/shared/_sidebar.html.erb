@@ -1,8 +1,8 @@
 <nav class="flex flex-col w-[176px] bg-sidebar">
   <div class="flex flex-col my-[16px]">
     <% [{ name: 'Dashboard', path: root_path, icon: 'dashboard', active: true },
-        { name: 'Messages', path: root_path, icon: 'messages', active: false },
-        { name: 'Tasks', path: root_path, icon: 'tasks', active: false }].each do |link| %>
+        { name: 'Messages', path: messages_path, icon: 'messages', active: false },
+        { name: 'Tasks', path: tasks_path, icon: 'tasks', active: false }].each do |link| %>
       <%= link_to(
         link[:path],
         src: link[:path],

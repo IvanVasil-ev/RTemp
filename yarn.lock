@@ -27,10 +27,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@hotwired/stimulus@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.0.tgz#257272f1348b1f7beb1a8510be88b80aec6c4c5b"
-  integrity sha512-uAIIdg049qId0lBhyjuMBfcC5uV8JwbhNLoxEyi9vxM3MW6h+mM97G9rNT4ZZMiqnKK9XUHp9SQUrd9rSLEmpQ==
+"@hotwired/stimulus@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
+  integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
 
 "@hotwired/turbo-rails@^7.2.4":
   version "7.2.4"
@@ -755,6 +755,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hotkeys-js@>=3:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.10.1.tgz#0c67e72298f235c9200e421ab112d156dc81356a"
+  integrity sha512-mshqjgTqx8ee0qryHvRgZaZDxTwxam/2yTQmQlqAWS3+twnq1jsY9Yng9zB7lWq6WRrjTbTOc7knNwccXQiAjQ==
+
 ignore@^5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.1.tgz#c2b1f76cb999ede1502f3a226a9310fdfe88d46c"
@@ -1211,7 +1216,14 @@ source-map-js@^1.0.2:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
-stimulus-vite-helpers@^3.0.0:
+stimulus-use@^0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.51.1.tgz#55e775eee26d583ee4bdb4427d58979885408ebe"
+  integrity sha512-e7yEDHWz1GrDWwTc1y1Nnz62HPjELRAfn5q1JSCpTj1wHCCs4NNRUR14oZ08xxlp/4bjrgApMOKRkMPKA2TmVg==
+  dependencies:
+    hotkeys-js ">=3"
+
+stimulus-vite-helpers@^3.0.0, stimulus-vite-helpers@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stimulus-vite-helpers/-/stimulus-vite-helpers-3.0.1.tgz#930a3c88b01e0754d43e5250ed66f09e5ad242c8"
   integrity sha512-v8vii8wTyzbH5REE3Z6DbtKqnXEuEQ3ylYs4jQRmLAQrH9vlii7p98MG8gIii1anEEPmnBB1JWWvxKXGZh7apQ==

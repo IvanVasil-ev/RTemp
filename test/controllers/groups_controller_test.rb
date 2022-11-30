@@ -2,14 +2,14 @@
 
 require 'test_helper'
 
-class TasksControllerTest < ActionDispatch::IntegrationTest
+class GroupsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get tasks_index_url
+    get groups_index_url
     assert_response :success
   end
 
   test 'should get show' do
-    get tasks_show_url
+    get groups_show_url
     assert_response :success
   end
 end

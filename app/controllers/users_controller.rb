@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TasksController < ApplicationController
+class UsersController < ApplicationController
   def index; end
 
   def show; end

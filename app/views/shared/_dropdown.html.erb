@@ -1,0 +1,14 @@
+<div
+  data-dropdown-target="menu"
+  aria-orientation="vertical"
+  aria-labelledby="menu-button"
+  class="hidden absolute top-[40px] left-[100px] w-[160px] rounded-[3px] border-[1px] border-sidebar bg-white divide-[2px] divide-y divide-black focus:outline-none"
+>
+  <div class="py-1" role="none">
+    <%= link_to 'My profile', root_path, role: "menuitem", tabindex: "-1",  id: "menu-item-0", class: 'block px-3 py-2 hover:bg-sidebar hover:text-white' %>
+    <%= link_to 'Settings', settings_path, role: "menuitem", tabindex: "-1", id: "menu-item-1", class: 'block px-3 py-2 hover:bg-sidebar hover:text-white' %>
+  </div>
+  <div class="py-1">
+    <%= link_to 'Sign Out', root_path, role: "menuitem", tabindex: "-1", id: "menu-item-2", class: 'block px-3 py-2 hover:bg-sidebar hover:text-white' %>
+  </div>
+</div>

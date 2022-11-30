@@ -1,19 +1,42 @@
-<nav class="flex flex-col w-[176px] bg-sidebar">
-  <div class="flex flex-col my-[16px]">
+<nav data-controller="dropdown" class="flex flex-col w-[176px] bg-sidebar select-none">
+  <div data-action="click->dropdown#toggle" data-type="menu" data-dropdown-target="profile" class="mt-[8px] px-[16px] py-[12px] flex cursor-pointer hover:bg-bluegray relative">
+    <%= image_tag('avatar-thumbnail-2.png', class: 'h-[32px] w-[32px] pointer-events-none') %>
+    <%= content_tag(:p, 'Ivan', class: 'h-fit my-auto ml-[8px] text-white grow pointer-events-none') %>
+    <%= image_tag("menu-arrow.svg", class: "w-[12px] pointer-events-none") %>
+    <%= render 'shared/dropdown' %>
+  </div>
+  <div class="flex flex-col my-[8px]">
     <% [{ name: 'Dashboard', path: root_path, icon: 'dashboard' },
+        { name: 'Tasks', path: tasks_path, icon: 'tasks' },
         { name: 'Messages', path: messages_path, icon: 'messages' },
-        { name: 'Tasks', path: tasks_path, icon: 'tasks' }].each do |link| %>
+        { name: 'Groups', path: groups_path, icon: 'groups' }].each do |link| %>
       <%= link_to(
-        link[:path],
-        src: link[:path],
-        class: 'pl-[16px] flex align-middle h-[48px] my-auto text-white select-none hover:cursor-pointer hover:bg-bluegray'
+        link[:path], src: link[:path],
+        class: 'flex align-middle h-[48px] my-auto text-white cursor-pointer hover:bg-bluegray'
       ) do %>
-        <%= image_tag("menu-#{link[:icon]}#{current_path?(link[:name]) ? '-active' : ''}.svg") %>
-        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if (current_path?(link[:name]))}")%>
+        <% if current_path?(link[:name]) %>
+          <%= content_tag(:div, '', class: 'w-[3px] bg-yellow') %>
+        <% end %>
+        <%= image_tag("menu-#{link[:icon]}#{'-active' if current_path?(link[:name])}.svg", class: "w-[20px] #{current_path?(link[:name]) ? 'ml-[16px]' : 'ml-[19px]'}") %>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if current_path?(link[:name])}")%>
       <% end %>
     <% end %>
   </div>
-  <%= content_tag(:div, '', class: 'h-[2px] w-full bg-lightgray')%>
+  <%= content_tag(:div, '', class: 'h-[2px] w-full bg-lightgray') %>
+  <div class="flex flex-col my-[8px]">
+    <% [{ name: 'Users', path: users_path },
+        { name: 'Reports', path: reports_path }].each do |link| %>
+      <%= link_to(
+        link[:path], src: link[:path],
+        class: 'flex align-middle h-[32px] my-auto text-white cursor-pointer hover:bg-bluegray'
+      ) do %>
+        <% if current_path?(link[:name]) %>
+          <%= content_tag(:div, '', class: 'w-[3px] bg-yellow') %>
+        <% end %>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] #{current_path?(link[:name]) ? 'text-yellow ml-[16px]' : 'ml-[19px]'}")%>
+      <% end %>
+    <% end %>
+  </div>
   <div class="px-[8px] mt-[48px]">
     <%= content_tag(:p, '© Ivan Vasiliev, 2022', class: 'text-[12px] text-white opacity-40') %>
   </div>

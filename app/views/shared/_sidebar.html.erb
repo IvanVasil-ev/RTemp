@@ -1,6 +1,6 @@
 <nav data-controller="dropdown" class="flex flex-col w-[176px] bg-sidebar select-none">
   <div data-action="click->dropdown#toggle" data-type="menu" data-dropdown-target="profile" class="mt-[8px] px-[16px] py-[12px] flex cursor-pointer hover:bg-bluegray relative">
-    <%= image_tag('avatar-thumbnail-2.png', class: 'h-[32px] w-[32px] pointer-events-none') %>
+    <%= image_tag('avatar-thumbnail.png', class: 'h-[32px] w-[32px] pointer-events-none') %>
     <%= content_tag(:p, 'Ivan', class: 'h-fit my-auto ml-[8px] text-white grow pointer-events-none') %>
     <%= image_tag("menu-arrow.svg", class: "w-[12px] pointer-events-none") %>
     <%= render 'shared/dropdown' %>
@@ -17,7 +17,7 @@
         <% if current_path?(link[:name]) %>
           <%= content_tag(:div, '', class: 'w-[3px] bg-yellow') %>
         <% end %>
-        <%= image_tag("menu-#{link[:icon]}#{'-active' if current_path?(link[:name])}.svg", class: "w-[20px] #{current_path?(link[:name]) ? 'ml-[16px]' : 'ml-[19px]'}") %>
+        <%= image_tag("menu-#{link[:icon]}.svg", class: "w-[20px] #{current_path?(link[:name]) ? 'filter-yellow ml-[16px]' : 'filter-white ml-[19px]'}") %>
         <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if current_path?(link[:name])}")%>
       <% end %>
     <% end %>

@@ -43,3 +43,7 @@ node_modules
 # Backups
 *.dump
 *.sql
+
+# Artefacts
+.DS_Store
+.idea

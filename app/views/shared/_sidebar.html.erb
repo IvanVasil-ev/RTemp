@@ -15,10 +15,10 @@
         class: 'flex align-middle h-[48px] my-auto text-white cursor-pointer hover:bg-bluegray'
       ) do %>
         <% if current_path?(link[:name]) %>
-          <%= content_tag(:div, '', class: 'w-[3px] bg-yellow') %>
+          <%= content_tag(:div, '', class: 'w-[3px] bg-orange') %>
         <% end %>
-        <%= image_tag("menu-#{link[:icon]}.svg", class: "w-[20px] #{current_path?(link[:name]) ? 'filter-yellow ml-[16px]' : 'filter-white ml-[19px]'}") %>
-        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-yellow' if current_path?(link[:name])}")%>
+        <%= image_tag("menu-#{link[:icon]}.svg", class: "w-[20px] #{current_path?(link[:name]) ? 'filter-orange ml-[16px]' : 'filter-white ml-[19px]'}") %>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] ml-[8px] #{'text-orange' if current_path?(link[:name])}")%>
       <% end %>
     <% end %>
   </div>
@@ -31,9 +31,9 @@
         class: 'flex align-middle h-[32px] my-auto text-white cursor-pointer hover:bg-bluegray'
       ) do %>
         <% if current_path?(link[:name]) %>
-          <%= content_tag(:div, '', class: 'w-[3px] bg-yellow') %>
+          <%= content_tag(:div, '', class: 'w-[3px] bg-orange') %>
         <% end %>
-        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] #{current_path?(link[:name]) ? 'text-yellow ml-[16px]' : 'ml-[19px]'}")%>
+        <%= content_tag(:p, link[:name], class: "h-fit my-auto text-[16px] #{current_path?(link[:name]) ? 'text-orange ml-[16px]' : 'ml-[19px]'}")%>
       <% end %>
     <% end %>
   </div>

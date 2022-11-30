@@ -21,13 +21,17 @@ module.exports = {
       /* Common colors */
       white: '#FFFFFF',
       black: '#000000',
-      yellow: '#FF9900',
+      yellow: '#F9B211',
+      orange: '#FF9900',
       bluegray: '#28384d',
       lightgray: '#FAFAFA25',
 
       /* Spec colors */
       navbar: '#11233B',
       sidebar: '#2B3D55',
+      'login-background': '#232F3E',
+      'login-menu': '#1E2C3D',
+      'login-border': '#FAFAFA',
     },
     extend: {
     },

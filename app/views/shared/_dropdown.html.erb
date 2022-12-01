@@ -9,6 +9,6 @@
     <%= link_to 'Settings', settings_path, role: "menuitem", tabindex: "-1", id: "menu-item-1", class: 'block px-3 py-2 hover:bg-sidebar hover:text-white' %>
   </div>
   <div class="py-1">
-    <%= link_to 'Sign Out', root_path, role: "menuitem", tabindex: "-1", id: "menu-item-2", class: 'block px-3 py-2 hover:bg-sidebar hover:text-white' %>
+    <%= link_to 'Logout', logout_path, data: { turbo_method: :post, }, role: "menuitem", tabindex: "-1", id: "menu-item-2", class: 'w-full block px-3 py-2 hover:bg-sidebar hover:text-white' %>
   </div>
 </div>

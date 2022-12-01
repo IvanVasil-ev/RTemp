@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.filter-yellow {
+.filter-orange {
   filter: invert(63%) sepia(31%) saturate(3259%) hue-rotate(0deg) brightness(100%) contrast(102%);
 }
 

@@ -6,14 +6,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 gem 'rails', '~> 7.0.4'
 
+gem 'acts_as_paranoid'
+gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'jbuilder'
+gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'propshaft'
 gem 'puma', '~> 5.0'
 gem 'redis', '~> 4.0'
-gem 'jwt'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'vite_rails'
@@ -24,7 +26,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
+  gem 'letter_opener'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'ruby-lsp', '~> 0.3.6'
   gem 'web-console'
 end

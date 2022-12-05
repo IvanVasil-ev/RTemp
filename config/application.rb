@@ -7,6 +7,7 @@ Bundler.require(*Rails.groups)
 module RTemp
   class Application < Rails::Application
     config.load_defaults 7.0
+    config.action_cable.url = "ws://localhost:3000/cable"
 
     config.action_mailer.preview_path = "#{config.root}/spec/mailers/previews"
     config.support_email = 'main@example.com'

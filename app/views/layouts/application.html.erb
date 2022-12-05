@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RTemp</title>
+    <title><%= full_title(yield(:page_title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= favicon_link_tag asset_path('logo.png') %>
     <%= csrf_meta_tags %>
@@ -10,15 +10,21 @@
     <%= vite_client_tag %>
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
+    <%= action_cable_meta_tag %>
   </head>
 
   <body class="min-h-screen flex flex-col">
     <% if @current_user %>
-      <%= render 'shared/navbar' %>
+      <%= render('shared/navbar') %>
       <main class="grow flex">
-        <%= render 'shared/sidebar' %>
-        <div class="px-[16px] pt-[16px] grow overflow-hidden overflow-x-hidden overflow-y-visible max-h-[calc(100vh-64px)]">
-          <%= yield %>
+        <%= render('shared/sidebar') %>
+        <div class="flex flex-col grow overflow-hidden overflow-hidden max-h-[calc(100vh-64px)] bg-background">
+          <% if yield(:set_page_header) %>
+            <%= render('shared/page_header') %>
+          <% end %>
+          <div class="p-[16px] grow">
+            <%= yield %>
+          </div>
         </div>
       </main>
     <% else %>

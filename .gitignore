@@ -38,6 +38,7 @@
 # Vite Ruby
 /public/vite*
 node_modules
+*.log
 *.local
 
 # Backups

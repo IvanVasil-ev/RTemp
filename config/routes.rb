@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   root 'dashboard#index'
 
   # <-- Auth
@@ -14,7 +16,11 @@ Rails.application.routes.draw do
   resources :messages, only: %i[index show]
   resources :tasks, only: %i[index show]
   resources :groups, only: %i[index show]
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index show] do
+    collection do
+      delete '', to: 'users#delete_selected', as: 'delete_selected'
+    end
+  end
   resources :reports, only: %i[index show]
   resources :settings, only: %i[index]
 end

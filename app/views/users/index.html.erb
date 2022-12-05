@@ -1,1 +1,9 @@
-<h1 class="text-xl">Users</h1>
+<div class="flex flex-col" data-controller="checkbox-select-all">
+  <div data-controller="users-dropdown">
+    <div data-action="click->users-dropdown#toggleUserActions" data-type="menu" data-users-dropdown-target="usersMenu" class="px-[16px] py-[8px] flex cursor-pointer relative w-fit rounded-[4px] text-white bg-blue select-none">
+      <p class="pointer-events-none">Actions</p>
+      <%= render 'dropdown' %>
+    </div>
+  </div>
+  <%= render 'user_list_table' %>
+</div>

@@ -1,0 +1,72 @@
+<table class="user-table w-full text-dark-blue border-spacing-y-[8px] border-separate">
+  <thead class="uppercase text-[12px]">
+    <tr>
+      <th scope="col" class="p-3">
+        <div class="flex">
+          <input type="checkbox" id="checkbox-select-all" class="rounded border-gray" data-checkbox-select-all-target="checkboxAll">
+        </div>
+      </th>
+      <th scope="col" class="p-3"></th>
+      <th scope="col" class="p-3">
+        <div class="flex items-center">
+          Name
+        </div>
+      </th>
+      <th scope="col" class="p-3">
+        <div class="flex items-center">
+          Role
+        </div>
+      </th>
+      <th scope="col" class="p-3">
+        <div class="flex items-center">
+          Country
+        </div>
+      </th>
+      <th scope="col" class="p-3">
+        <div class="flex items-center">
+          Last online
+        </div>
+      </th>
+      <th scope="col" class="p-3">
+        <div class="flex items-center">
+          Message
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="text-[16px]">
+    <% @users.each do |u| %>
+      <tr class="bg-white border border-black <%= @current_user != u ? 'hover:cursor-pointer hover' : '' %>" data-action="<%= @current_user != u ? 'click->checkbox-select-all#selectCheckbox' : '' %>">
+        <td scope="col" class="p-3 w-[120px]">
+          <% if (@current_user != u) %>
+            <label class="flex w-fit">
+              <input id="checkbox" type="checkbox" class="rounded border-gray" data-checkbox-select-all-target="checkbox" value="<%= u.id %>">
+            </label>
+          <% end %>
+        </td>
+        <td scope="col" class="p-3 w-[120px]">
+          <%= image_tag('avatar-thumbnail.png', class: 'w-[35px]') %>
+        </td>
+        <td scope="col" class="p-3">
+          <%= user_full_name(u) %>
+        </td>
+        <td scope="col" class="uppercase p-3 w-[200px]">
+          <%= u.role %>
+        </td>
+        <td scope="col" class="p-3 w-[240px]">
+          <%= u.country %>
+        </td>
+        <td scope="col" class="p-3 w-[320px]">
+          <p class="<%= online_status_to_color(u.role) %>">
+            <%= u.role %>
+          </p>
+        </td>
+        <td id="action" scope="col" class="uppercase p-3 w-[80px]">
+          <% if (@current_user != u) %>
+            <%= link_to(image_tag('user-message-button.svg', class: 'w-[40px]', data: { disableCheck: true }), message_path(u), data: { disableCheck: true }) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

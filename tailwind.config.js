@@ -21,12 +21,18 @@ module.exports = {
       /* Common colors */
       white: '#FFFFFF',
       black: '#000000',
+      green: '#219653',
+      red: '#EB5757',
+      blue: '#0066C0',
+      'dark-blue': '#232F3E',
       yellow: '#F9B211',
       orange: '#FF9900',
+      gray: '#BDBDBD',
       bluegray: '#28384d',
       lightgray: '#FAFAFA25',
 
       /* Spec colors */
+      background: '#F6F6F6',
       navbar: '#11233B',
       sidebar: '#2B3D55',
       'login-background': '#232F3E',

@@ -5,6 +5,7 @@ class Initial < ActiveRecord::Migration[7.0]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.integer :role, default: 0
+      t.string :country, default: ''
       t.boolean :confirmed, default: false
       t.string :confirmation_token, default: nil
       t.datetime :confirmation_token_sent_at, default: nil
@@ -35,8 +36,8 @@ class Initial < ActiveRecord::Migration[7.0]
     add_index :users, :confirmation_token, unique: true
     add_index :passwords, :reset_password_token, unique: true
 
-    add_reference :refresh_tokens, :user, foreign_key: true, index: true
-    add_reference :user_secrets, :user, foreign_key: true, index: true
     add_reference :passwords, :user, foreign_key: true, index: true
+    add_reference :user_secrets, :user, foreign_key: true, index: true
+    add_reference :refresh_tokens, :user, foreign_key: true, index: true
   end
 end

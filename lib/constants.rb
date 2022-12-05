@@ -2,6 +2,7 @@
 
 module Constants
   USER_ROLES = %i[user manager admin].freeze
+  USER_ONLINE_STATUSES = %i[offline online].freeze
 
   COOKIES_DOMAIN = ENV.fetch('COOKIES_DOMAIN', 'localhost').freeze
   HASH_ALGORITHM = ENV.fetch('HASH_ALGORITHM', 'HS256').freeze

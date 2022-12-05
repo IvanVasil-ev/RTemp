@@ -9,3 +9,25 @@
 .filter-white {
   filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(154deg) brightness(103%) contrast(102%);
 }
+
+.user-table tbody tr:hover.hover {
+  outline: auto;
+  outline-color: #0066C0;
+}
+
+.user-table tbody tr td {
+  border-top: 1px solid #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.user-table tbody tr td:first-child {
+  border-left: 1px solid #BDBDBD;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.user-table tbody tr td:last-child {
+  border-right: 1px solid #BDBDBD;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}

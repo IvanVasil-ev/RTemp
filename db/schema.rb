@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_210220) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.integer "role", default: 0
+    t.string "country", default: ""
     t.boolean "confirmed", default: false
     t.string "confirmation_token"
     t.datetime "confirmation_token_sent_at"

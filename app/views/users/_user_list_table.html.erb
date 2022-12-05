@@ -48,7 +48,7 @@
           <%= image_tag('avatar-thumbnail.png', class: 'w-[35px]') %>
         </td>
         <td scope="col" class="p-3">
-          <%= user_full_name(u) %>
+          <%= @current_user.full_name %>
         </td>
         <td scope="col" class="uppercase p-3 w-[200px]">
           <%= u.role %>

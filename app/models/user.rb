@@ -10,4 +10,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   enum role: Constants::USER_ROLES
+
+  def full_name
+    f_name = first_name || ''
+    l_name = last_name || ''
+    "#{f_name} #{l_name}"
+  end
 end

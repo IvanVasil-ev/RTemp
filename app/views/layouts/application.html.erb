@@ -14,14 +14,12 @@
   </head>
 
   <body class="min-h-screen flex flex-col">
-    <% if @current_user %>
+    <% if log_in? %>
       <%= render('shared/navbar') %>
       <main class="grow flex">
         <%= render('shared/sidebar') %>
         <div class="flex flex-col grow overflow-hidden overflow-hidden max-h-[calc(100vh-64px)] bg-background">
-          <% if yield(:set_page_header) %>
-            <%= render('shared/page_header') %>
-          <% end %>
+          <%= render('shared/page_header') %>
           <div class="p-[16px] grow">
             <%= yield %>
           </div>

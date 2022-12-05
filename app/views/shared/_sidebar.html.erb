@@ -1,7 +1,7 @@
 <nav data-controller="sidebar-dropdown" class="flex flex-col w-[200px] bg-sidebar select-none">
   <div data-action="click->sidebar-dropdown#toggleSidebarMenu" data-type="menu" data-sidebar-dropdown-target="sidebarProfile" class="mt-[8px] px-[16px] py-[12px] flex cursor-pointer hover:bg-bluegray relative">
     <%= image_tag('avatar-thumbnail.png', class: 'h-[32px] w-[32px] pointer-events-none') %>
-    <%= content_tag(:p, user_full_name(@current_user), class: 'h-fit my-auto ml-[8px] text-white grow pointer-events-none') %>
+    <%= content_tag(:p, @current_user.full_name, class: 'h-fit my-auto ml-[8px] text-white grow pointer-events-none') %>
     <%= image_tag("menu-arrow.svg", class: "w-[12px] pointer-events-none") %>
     <%= render 'shared/dropdown' %>
   </div>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :groups, only: %i[index show]
   resources :users, only: %i[index show] do
     collection do
+      get 'me', to: 'users#me', as: 'me'
       delete '', to: 'users#delete_selected', as: 'delete_selected'
     end
   end

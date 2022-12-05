@@ -14,14 +14,20 @@ module ApplicationHelper
     end
   end
 
-  def path_name
-    controller.controller_name.capitalize
+  def set_header?(state = false)
+    !state
   end
 
-  def user_full_name(user)
-    f_name = user[:first_name] || ''
-    l_name = user[:last_name] || ''
-    "#{f_name} #{l_name}"
+  def log_in?
+    @current_user.present?
+  end
+
+  def path_name(page_header_title = '')
+    if page_header_title.present?
+      page_header_title
+    else
+      controller.controller_name.capitalize
+    end
   end
 
   def online_status_to_color(status)

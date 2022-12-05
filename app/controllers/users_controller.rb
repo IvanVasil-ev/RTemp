@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show; end
 
+  def me; end
+
   def delete_selected
     ids = params[:id].split(',')
     users = User.where(id: ids)
